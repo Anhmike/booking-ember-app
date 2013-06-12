@@ -1,0 +1,31 @@
+<h2>Bookings</h2>
+
+{{#linkTo "new_booking"}}New Booking{{/linkTo}}
+
+<table>
+  <thead>
+    <th>firstName</th>
+    <th>lastName</th>
+    <th>date</th>
+    <th>peopleNum</th>
+    <th>phone</th>
+    <th>e-mail</th>
+    <th>note</th>
+  </thead>
+  <tbody>
+    {{#each booking in controller.content}}
+    <tr>
+      <td>{{booking.firstName}}</td>
+      <td>{{booking.lastName}}</td>
+      <td>{{booking.date}}</td>
+      <td>{{booking.peopleNum}}</td>
+      <td>{{booking.phone}}</td>
+      <td>{{booking.email}}</td>
+      <td>{{booking.note}}</td>
+      <td>{{#linkTo "booking" booking}}view{{/linkTo}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+

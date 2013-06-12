@@ -1,0 +1,45 @@
+<h2>Booking</h2>
+
+<form {{action save on="submit"}}>
+  
+  <p>
+    <label for="first_name">First name</label><br>
+    {{view Ember.TextField valueBinding="firstName" id="first_name"}}
+  </p>
+  
+  <p>
+    <label for="last_name">Last name</label><br>
+    {{view Ember.TextField valueBinding="lastName" id="last_name"}}
+  </p>
+  
+  <p>
+    <label for="date">Date</label><br>
+    {{view Ember.TextField valueBinding="date" id="date"}}
+  </p>
+  
+  <p>
+    <label for="people_num">People num</label><br>
+    {{view Ember.TextField valueBinding="peopleNum" id="people_num"}}
+  </p>
+  
+  <p>
+    <label for="phone">Phone</label><br>
+    {{view Ember.TextField valueBinding="phone" id="phone"}}
+  </p>
+  
+  <p>
+    <label for="email">E-mail</label><br>
+    {{view Ember.TextField valueBinding="email" id="email"}}
+  </p>
+  
+  <p>
+    <label for="note">Note</label><br>
+    {{view Ember.TextField valueBinding="note" id="note"}}
+  </p>
+  
+  <p>
+    <button type="submit">Save</button>
+  </p>
+
+</form>
+

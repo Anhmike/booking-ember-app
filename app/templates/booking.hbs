@@ -1,0 +1,33 @@
+<h2>Booking</h2>
+
+<p>
+  <b>First name:</b> {{firstName}}
+</p>
+
+<p>
+  <b>Last name:</b> {{lastName}}
+</p>
+
+<p>
+  <b>Date:</b> {{date}}
+</p>
+
+<p>
+  <b>People num:</b> {{peopleNum}}
+</p>
+
+<p>
+  <b>Phone:</b> {{phone}}
+</p>
+
+<p>
+  <b>E-mail:</b> {{email}}
+</p>
+
+<p>
+  <b>Note:</b> {{note}}
+</p>
+
+{{#linkTo "bookings"}}←All Bookings{{/linkTo}}
+{{#linkTo "edit_booking" model}}Edit{{/linkTo}}
+<a href="#" {{action "destroy"}}>Destroy</a>
