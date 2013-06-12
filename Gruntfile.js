@@ -24,9 +24,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         watch: {
-            ember_templates: {
+            emberTemplates: {
               files: '<%= yeoman.app %>/templates/**/*.hbs',
-              tasks: ['ember_templates', 'livereload']
+              tasks: ['emberTemplates', 'livereload']
             },
             coffee: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
@@ -270,7 +270,7 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'ember_templates',
+                'emberTemplates',
                 'coffee:dist',
                 'compass:server',
                 'neuter:app'
@@ -281,7 +281,7 @@ module.exports = function (grunt) {
                 'neuter:app'
             ],
             dist: [
-                'ember_templates',
+                'emberTemplates',
                 'coffee',
                 'compass:dist',
                 'neuter:app',
@@ -290,7 +290,7 @@ module.exports = function (grunt) {
                 'htmlmin'
             ]
         },
-        ember_templates: {
+        emberTemplates: {
             options: {
                 templateName: function (sourceFile) {
                     var templatePath = yeomanConfig.app + '/templates/';
