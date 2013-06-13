@@ -1,0 +1,37 @@
+<p>
+    <label for="name">Guest name</label><br>
+    {{view Ember.TextField valueBinding="name" id="name"}}
+</p>
+
+<p>
+
+    <label for="date">Date</label>
+    <div id="datetimepicker" class="input-append date">
+
+        {{view App.DatePicker valueBinding="date" id="date"}}
+        <span class="add-on">
+          <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+        </span>
+    </div>
+
+</p>
+
+<p>
+    <label for="people_num">Number of covers</label>
+    {{view App.NumberField valueBinding="peopleNum" id="people_num"}}
+</p>
+
+<p>
+    <label for="phone">Guest's phone number</label>
+    {{view Ember.TextField valueBinding="phone" id="phone"}}
+</p>
+
+<p>
+    <label for="email">E-mail of the guest</label>
+    {{view Ember.TextField valueBinding="email" id="email"}}
+</p>
+
+<p>
+    <label for="note">Note</label>
+    {{view Ember.TextArea valueBinding="note" id="note"}}
+</p>

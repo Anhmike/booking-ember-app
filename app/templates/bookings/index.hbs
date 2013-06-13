@@ -1,0 +1,39 @@
+{{#if controller.content}}
+    <table class="table table-striped table-hover">
+        <thead>
+        <th>Gust name</th>
+        <th>Date</th>
+        <th>Covers</th>
+        <th>Phone</th>
+        <th>E-mail</th>
+        <th>Note</th>
+        <th>Booking status</th>
+        </thead>
+        <tbody>
+            {{#each booking in controller.content}}
+                <tr {{action 'detail' booking on="click"}}>
+                    <td>{{booking.name}}</td>
+                    <td>{{booking.date}}</td>
+                    <td>{{booking.peopleNum}}</td>
+                    <td>{{booking.phone}}</td>
+                    <td>{{booking.email}}</td>
+                    <td>{{booking.note}}</td>
+                    <td>
+                        {{#if booking.seated}}
+                            <span class="text-success">Seated</span>
+                        {{else}}
+                            {{#if booking.expired}}
+                                <span class="text-error">Booking expired</span>
+                            {{else}}
+                                <span class="text-info">Not arrived yet</span>
+                            {{/if}}
+                        {{/if}}
+                    </td>
+                </tr>
+
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p class="no-records-info">No bookings have been entered yet. Create a new booking by clicking the button in the top right corner.</p>
+{{/if}}

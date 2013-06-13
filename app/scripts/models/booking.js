@@ -1,18 +1,30 @@
 App.Booking = DS.Model.extend({
 
-  firstName: DS.attr('string'),
+    TOLERANCE_MINUTES: 20,
 
-  lastName: DS.attr('string'),
+    name: DS.attr('string'),
 
-  date: DS.attr('datetime'),
+    date: DS.attr('date'),
 
-  peopleNum: DS.attr('number'),
+    peopleNum: DS.attr('number'),
 
-  phone: DS.attr('number'),
+    phone: DS.attr('number'),
 
-  email: DS.attr('string'),
+    email: DS.attr('string'),
 
-  note: DS.attr('text')
+    note: DS.attr('string'),
+
+    seated: DS.attr('boolean'),
+
+    expired: function() {
+        if (this.get('date')) {
+            var bookingDate = new Date(this.get('date'));
+            var expiration = new Date();
+            expiration.setMinutes(expiration.getMinutes() - this.TOLERANCE_MINUTES);
+            var diff = expiration - bookingDate;
+            return diff > 0;
+        }
+    }.property('seated')
 
 });
 

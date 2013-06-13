@@ -2,9 +2,10 @@
     <div class="navbar-inner">
         <div class="container-fluid">
             <div class="brand">{{#linkTo "index"}}Employee Test - Booking Application{{/linkTo}}</div>
-            <div class="pull-right btn">
-                Sign In
-            </div>
+                <div class="pull-right btn" {{action 'create' on="click"}} >
+                    New Booking
+                </div>
+            </a>
         </div>
     </div>
 </div>

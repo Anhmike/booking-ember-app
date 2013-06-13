@@ -1,0 +1,14 @@
+<h2>New booking</h2>
+<form {{action save on="submit"}} class="form-horizontal">
+
+    {{partial "bookings/edit_fields"}}
+
+    <div class="form-actions">
+
+        {{! submitButton is defined in helpers/forms }}
+        {{submitButton "Create"}}
+
+        <button class="btn" {{action cancel}}>Cancel</button>
+
+    </div>
+</form>
